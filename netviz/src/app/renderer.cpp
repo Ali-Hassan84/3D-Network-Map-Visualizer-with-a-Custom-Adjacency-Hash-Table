@@ -110,7 +110,7 @@ Color ScaleAlpha(Color c, float a) {
     return Color{ c.r, c.g, c.b, static_cast<unsigned char>(c.a * a) };
 }
 
-Color LerpColor(Color a, Color b, float t) {
+[[maybe_unused]] Color LerpColor(Color a, Color b, float t) {
     return Color{
         static_cast<unsigned char>(a.r + (b.r - a.r) * t),
         static_cast<unsigned char>(a.g + (b.g - a.g) * t),

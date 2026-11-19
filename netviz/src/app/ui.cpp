@@ -61,7 +61,7 @@ void Txt(int x, int y, int size, Color c, const char* fmt, ...) {
 void PanelBg(float x, float y, float w, float h) {
     Rectangle rect{ x, y, w, h };
     DrawRectangleRounded(rect, kRadius, 6, kPanel);
-    DrawRectangleRoundedLines(rect, kRadius, 6, 1.5f, kBorder);
+    DrawRectangleRoundedLinesEx(rect, kRadius, 6, 1.5f, kBorder);
 }
 
 // Panel with title bar
@@ -305,7 +305,7 @@ void DrawSearch(const AppState& s, int sw) {
     Rectangle rect{ static_cast<float>(bx), static_cast<float>(by),
                     static_cast<float>(w),  static_cast<float>(h) };
     DrawRectangleRounded(rect, 0.08f, 6, Color{ 11, 15, 28, 248 });
-    DrawRectangleRoundedLines(rect, 0.08f, 6, 1.5f, b.slot == 0 ? kGold : kPink);
+    DrawRectangleRoundedLinesEx(rect, 0.08f, 6, 1.5f, b.slot == 0 ? kGold : kPink);
 
     // Slot label + typed text + blinking caret
     Color slotCol = b.slot == 0 ? kGold : kPink;
