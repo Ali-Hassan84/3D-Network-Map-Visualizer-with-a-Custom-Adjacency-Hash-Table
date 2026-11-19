@@ -1,0 +1,12 @@
+build/
+*.o
+*.d
+*.exe
+netviz
+netviz_tests
+netviz_tests_asan
+netviz_bench
+netviz_gen
+netviz_autoshot.png
+*.png
+!docs/*.png

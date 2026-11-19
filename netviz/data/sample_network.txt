@@ -1,0 +1,64 @@
+# ======================================================================================
+#  SAMPLE dataset - shows the NetViz 3D file format. Latencies are ILLUSTRATIVE ONLY,
+#  not real measurements. Replace this with your own file (see README.md, "Dataset format").
+# ======================================================================================
+NAME Sample Global Server Network
+COORDS GEO                 # NODE lines give: id  latitude  longitude   (degrees)
+DEFAULT_LINK UNDIRECTED    # EDGE lines are two-way unless they end with DIRECTED
+
+# ---- nodes:  NODE <id> <lat> <lon> ------------------------------------------------
+NODE Server_London        51.5074   -0.1278
+NODE Server_Paris         48.8566    2.3522
+NODE Server_Frankfurt     50.1109    8.6821
+NODE Server_Madrid        40.4168   -3.7038
+NODE Server_Stockholm     59.3293   18.0686
+NODE Server_NewYork       40.7128  -74.0060
+NODE Server_Ashburn       39.0438  -77.4874
+NODE Server_Chicago       41.8781  -87.6298
+NODE Server_LosAngeles    34.0522 -118.2437
+NODE Server_SaoPaulo     -23.5505  -46.6333
+NODE Server_Dubai         25.2048   55.2708
+NODE Server_Mumbai        19.0760   72.8777
+NODE Server_Singapore      1.3521  103.8198
+NODE Server_HongKong      22.3193  114.1694
+NODE Server_Tokyo         35.6762  139.6503
+NODE Server_Sydney       -33.8688  151.2093
+NODE Server_Johannesburg -26.2041   28.0473
+NODE Server_Cairo         30.0444   31.2357
+# Two nodes that are NOT connected to the main network (shows "disconnected" + colouring):
+NODE Edge_Reykjavik       64.1466  -21.9426
+NODE Edge_Honolulu        21.3069 -157.8583
+NODE Lonely_Node         -54.8019  -68.3030    # isolated: no edges at all
+
+# ---- edges:  EDGE <source> <target> <latency_ms> [DIRECTED|UNDIRECTED] -------------
+EDGE Server_London      Server_Paris        8
+EDGE Server_London      Server_Frankfurt   14
+EDGE Server_London      Server_NewYork     70
+EDGE Server_London      Server_Stockholm   26
+EDGE Server_Paris       Server_Frankfurt   10
+EDGE Server_Paris       Server_Madrid      18
+EDGE Server_Frankfurt   Server_Stockholm   22
+EDGE Server_Frankfurt   Server_Dubai      110
+EDGE Server_Frankfurt   Server_Cairo       62
+EDGE Server_Madrid      Server_SaoPaulo   180
+EDGE Server_NewYork     Server_Ashburn      8
+EDGE Server_NewYork     Server_Chicago     18
+EDGE Server_Ashburn     Server_Chicago     20
+EDGE Server_Ashburn     Server_SaoPaulo   120
+EDGE Server_Chicago     Server_LosAngeles  45
+EDGE Server_LosAngeles  Server_Tokyo      105
+EDGE Server_LosAngeles  Server_Sydney     150
+EDGE Server_Dubai       Server_Mumbai      42
+EDGE Server_Cairo       Server_Dubai       60
+EDGE Server_Cairo       Server_Johannesburg 105
+EDGE Server_Mumbai      Server_Singapore   55
+EDGE Server_Singapore   Server_HongKong   35
+EDGE Server_Singapore   Server_Sydney      95
+EDGE Server_HongKong    Server_Tokyo       48
+EDGE Server_Tokyo       Server_Sydney     110
+EDGE Server_Johannesburg Server_Mumbai    130
+
+# A one-way link: traffic can go Tokyo -> Honolulu but not back (shows arrowheads + direction)
+EDGE Server_Tokyo       Edge_Honolulu      75 DIRECTED
+# A small separate island of two nodes:
+EDGE Edge_Reykjavik     Edge_Honolulu     120
