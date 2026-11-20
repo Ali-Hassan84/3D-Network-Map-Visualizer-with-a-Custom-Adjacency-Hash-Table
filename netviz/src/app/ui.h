@@ -8,3 +8,4 @@ struct UiLayout { UiRect left, right, bottom; };
 UiLayout UiComputeLayout(int screenW, int screenH);
 bool     UiPointOverPanel(const AppState& s, float x, float y, int screenW, int screenH);
 void     UiDraw(const AppState& s);
+void     UiShutdown();   // frees HUD fonts; call before CloseWindow()

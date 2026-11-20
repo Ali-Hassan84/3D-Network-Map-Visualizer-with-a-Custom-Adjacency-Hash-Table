@@ -77,6 +77,7 @@ int main(int argc, char** argv) {
     }
 
     // ---- clean shutdown -----------------------------------------------------------
+    UiShutdown();
     RendererShutdown(renderer);
     AppShutdown(state);
     CloseWindow();

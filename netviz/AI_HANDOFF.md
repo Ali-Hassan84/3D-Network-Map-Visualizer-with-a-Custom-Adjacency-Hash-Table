@@ -20,6 +20,18 @@ mouse/keyboard input, ASan/LSan clean.
 - `main.cpp` — window opens at 1600×900 (was 1366×768); `MSAA 4X` and `VSYNC` flags kept;
   background colour is now `{8, 11, 22}` (deep space) to match renderer palette.
 
+**Revision 3 HUD redesign:**
+- `ui.cpp` — "instrument" HUD: obsidian glass docks (hairline border, top specular line,
+  corner reticles), Space Grotesk labels + JetBrains Mono values, slate / off-white /
+  ice-cyan (hash metrics) / amber (selection A + route) palette.  Panels hug their content
+  with an animated height; histogram bars have hover tooltips; direct links have hover
+  rows + latency pills; bottom bar is a centred floating pill dock of keycaps that drops
+  low-priority hints on narrow windows.  `UiShutdown()` frees the fonts (called in main).
+- Fonts live in `assets/fonts/` (OFL licences included), looked up relative to the CWD,
+  `../`, and the executable directory.  Missing files fall back to raylib's default font.
+- No backdrop blur: the 3D scene is drawn straight to the backbuffer, so true blur needs
+  a render-texture + blur shader pass (same upgrade path as bloom in section 7).
+
 **Primary user environment:** Windows, VS Code, g++ from MSYS2 UCRT64 (keep code portable,
 no POSIX-only APIs, no compiler extensions).  Authors present it in a class demo, so code
 should stay *explainable* — prefer plain, readable code.
