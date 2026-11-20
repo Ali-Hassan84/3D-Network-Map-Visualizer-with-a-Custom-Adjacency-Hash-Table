@@ -94,6 +94,46 @@
         "clear": true
       },
       "problemMatcher": []
+    },
+    {
+      "label": "Run: netviz 100k",
+      "type": "shell",
+      "command": "./netviz.exe",
+      "args": ["--synthetic", "100000", "42"],
+      "dependsOn": "Build: netviz (Release)",
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PATH": "C:\\msys64\\ucrt64\\bin;${env:PATH}"
+        }
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "clear": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run: netviz sample",
+      "type": "shell",
+      "command": "./netviz.exe",
+      "args": ["data/sample_network.txt"],
+      "dependsOn": "Build: netviz (Release)",
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PATH": "C:\\msys64\\ucrt64\\bin;${env:PATH}"
+        }
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "clear": false
+      },
+      "problemMatcher": []
     }
   ]
 }
