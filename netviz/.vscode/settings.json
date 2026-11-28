@@ -1,0 +1,26 @@
+{
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "editor.formatOnSave": false,
+  "files.encoding": "utf8",
+  "files.eol": "\n",
+  "C_Cpp.default.compilerPath": "C:/msys64/ucrt64/bin/g++.exe",
+  "C_Cpp.default.cppStandard": "c++17",
+  "C_Cpp.default.includePath": [
+    "${workspaceFolder}/src/core",
+    "${workspaceFolder}/src/app",
+    "C:/msys64/ucrt64/include"
+  ],
+  "C_Cpp.errorSquiggles": "enabled",
+  "terminal.integrated.defaultProfile.windows": "MSYS2 UCRT64",
+  "terminal.integrated.profiles.windows": {
+    "MSYS2 UCRT64": {
+      "path": "C:\\msys64\\ucrt64\\bin\\bash.exe",
+      "args": ["--login", "-i"],
+      "env": {
+        "MSYSTEM": "UCRT64",
+        "CHERE_INVOKING": "1"
+      }
+    }
+  }
+}

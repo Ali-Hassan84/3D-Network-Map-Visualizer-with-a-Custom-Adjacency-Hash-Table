@@ -1,0 +1,25 @@
+{
+  "configurations": [
+    {
+      "name": "Win32 (MSYS2 UCRT64)",
+      "includePath": [
+        "${workspaceFolder}/src/core",
+        "${workspaceFolder}/src/app",
+        "C:/msys64/ucrt64/include"
+      ],
+      "defines": [],
+      "compilerPath": "C:/msys64/ucrt64/bin/g++.exe",
+      "cStandard": "c17",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "windows-gcc-x64",
+      "browse": {
+        "path": [
+          "${workspaceFolder}/src",
+          "C:/msys64/ucrt64/include"
+        ],
+        "limitSymbolsToIncludedHeaders": true
+      }
+    }
+  ],
+  "version": 4
+}
